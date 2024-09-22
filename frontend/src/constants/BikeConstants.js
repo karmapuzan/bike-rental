@@ -1,0 +1,3 @@
+export const GET_BIKE_REQUEST = "GET_BIKE_REQUEST"
+export const GET_BIKE_SUCCESS = "GET_BIKE_SUCCESS"
+export const GET_BIKE_FAIL = "GET_BIKE_FAIL"

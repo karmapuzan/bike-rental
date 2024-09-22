@@ -8,7 +8,7 @@
 
 .single-product-componetn{
     
-    border: 1px solid black;
+    box-shadow: 0px 6px 10px rgb(22, 22, 22);
     width: 300px;
     height: 420px;
     border-top-right-radius: 30px;
@@ -19,11 +19,11 @@
 .single-product-componetn .image{
     width: 300px;
     height: 200px;
-    border:1px solid red;
+    
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
-    box-shadow: 0px 6px 10px blue;
+    
 }
 
 

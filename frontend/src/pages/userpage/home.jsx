@@ -2,23 +2,23 @@ import React, { useEffect } from 'react'
 import UserContainer from '../../component/container/UserContainer'
 import AllBikeLIst from '../../component/BikeComponent/AllBikeLIst'
 import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetBike } from '../../actions/BIkeAction'
 
 const Home = () => {
 
-const fetchproduct =async()=>{
+  const dispatch = useDispatch()
 
-  const response = await axios.get('/api/v1/bike/getbike')
-  console.log("response", response)
-}
+  const {bikes} = useSelector((state)=> state.getBike)
 
   useEffect(()=>{
-    fetchproduct()
+    dispatch(GetBike())
 
   },[])
   return (
     <UserContainer>
     <div> home page
-     <AllBikeLIst/>
+     <AllBikeLIst bikes = {bikes}/>
     </div>
     </UserContainer>
   )

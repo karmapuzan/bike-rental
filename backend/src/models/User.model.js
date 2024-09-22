@@ -41,11 +41,7 @@ const UserSchema = new Schema({
         
 
     },
-    profile: {
-        type:String,
-        required:true
-
-    }, 
+   
     refreshToken:{
         type:String
     }

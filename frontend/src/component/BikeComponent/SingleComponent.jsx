@@ -6,7 +6,7 @@ const SingleComponent = ({bike}) => {
     <div className='single-product-componetn'>
 
         <div className="image">
-            <img src="" alt="product image" />
+            <img src={bike?.image} alt="product image" />
 
         </div>
 

@@ -63,49 +63,43 @@ const registerUser = AsyncHandler(async(req, res)=>{
     }
 
     
-    const profilelocal = req.file?.path
-    if(!profilelocal){
-        throw new ApiError(400, "profile local url in not found")
-    }
-    console.log("file path", profilelocal)
+   
     
 
-    const profile = await uploadToCoudinary(profilelocal)
-    if(!profile.url){
-        throw new ApiError(400, "profile url is not found in cloudinary")
-    }
+   
     
     console.log("name",name,
         "email",email,
         "password", password,
         "address",address,
-        "contact", contact,"profile",profile.url)
+        "contact", contact)
     let user
     try {
         user = await User.create({
-            name,
             email,
+            name,
             password,
             address,
             contact,
-            profile: profile.url
+            
         })
         
     } catch (error) {
         console.log("error creating user")
+        throw new ApiError(400, "error creating user")
         
     }
 
-    const userdetail = await User.findById(user._id)
-    if(!userdetail){
-        throw new ApiError(400, "user detail is not found")
-    }
+    // const userdetail = await User.findById(user?._id)
+    // if(!userdetail){
+    //     throw new ApiError(400, "user detail is not found")
+    // }
 
 
 
     
 
-    return res.status(200).json(new ApiResponse(200, userdetail, "user register success"))
+    return res.status(200).json(new ApiResponse(200, user, "user register success"))
 })
 
 //=======================================================================================================
@@ -164,42 +158,49 @@ const registerUser = AsyncHandler(async(req, res)=>{
 
 // })
 
-const loginUser = AsyncHandler(async (req, res) => {
-    const { email, username, password } = req.body;
+const loginUser = AsyncHandler(async(req, res)=>{
 
-    if (!username && !email) {
-        throw new ApiError(400, "Username or email is required");
+    const {email, password} = req.body
+
+    if(!email || !password){
+        throw new ApiError(400, "email, password is required")
     }
 
-    const user = await User.findOne({
-        $or: [{ username }, { email }]
-    });
+    const user = await User.findOne({email: email})
+    if(!user){
+        throw new ApiError(400, "user not found")
+    }
+  
 
-    if (!user) {
-        throw new ApiError(404, "User does not exist");
+    const compare = await user.comparePassword(password)
+    if(!compare){
+        throw new ApiError(400, "error in compare password password doesnot match")
     }
 
-    const isPasswordValid = await user.comparePassword(password);
-    if (!isPasswordValid) {
-        throw new ApiError(401, "Invalid user credentials");
+    const {accessToken, refreshToken} = await createAccessRefreshToken(user._id)
+    
+    if(!accessToken || !refreshToken){
+        throw new ApiError(400, "access token and refresh token is not generated")
     }
 
-    const { accessToken, refreshToken } = await createAccessRefreshToken(user._id);
+    const loggedInUser = await User.findById(user._id)
+    if(!loggedInUser){
+        throw new ApiError(400, "user is not logged in ")
+    }
 
-    const loggedInUser = await User.findById(user._id).select("-password -refreshToken");
+        // const options = {
+        //     httpOnly:true,
+        //     secure:true
+        // }
 
-    const options = {
-        httpOnly: true,
-        secure: true,
-    };
+    
 
-    return res.status(200).json({
-        user: loggedInUser,
-        accessToken,
-        refreshToken,
-        message: "User logged in successfully"
-    });
-});
+
+    return res.status(200)
+    // .cookie("accessToken", accessToken, options)
+    // .cookie("refreshToken", refreshToken, options)
+    .json(new ApiResponse(200, {user: loggedInUser, accessToken, refreshToken}, "user logged in success"))
+})
 
 
 
