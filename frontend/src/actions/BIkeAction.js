@@ -1,4 +1,6 @@
-import { GET_BIKE_FAIL, GET_BIKE_REQUEST, GET_BIKE_SUCCESS } from "../constants/BikeConstants";
+import { GET_BIKE_FAIL, GET_BIKE_REQUEST, GET_BIKE_SUCCESS,
+    BIKE_DETAIL_FAIL, BIKE_DETAIL_REQUEST, BIKE_DETAIL_SUCCESS
+ } from "../constants/BikeConstants";
 import axios from 'axios'
 
 
@@ -18,3 +20,7 @@ export const GetBike = ()=> async(dispatch)=>{
     }
 
 }
+
+
+
+
