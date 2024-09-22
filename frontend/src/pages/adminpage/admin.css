@@ -1,0 +1,72 @@
+.admin-panel-cont{
+    background-color: rgb(235, 234, 234);
+    padding: 20px 30px;
+}
+
+.admin-cont{
+    background-color: rgb(235, 234, 234);
+    padding: 20px 30px;
+
+}
+
+
+.admin-panel-cont .admin-panel-continer{
+    padding: 60px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+    flex-wrap: wrap;
+}
+
+
+.admin-panel-cont .admin-panel-continer .admin-panal-card{
+    width: 450px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+
+
+.adminBikes-content{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    width: 100%;
+}
+
+.adminBikes-content .name{
+    width: 15%;
+    background-color: red;
+}
+.adminBikes-content .serialNumber{
+    width: 15%;
+    background-color: blue;
+}
+.adminBikes-content .description{
+    width: 30%;
+    background-color: red;
+}
+.adminBikes-content .bikeType{
+    width: 15%;
+    background-color: blue;
+}
+.adminBikes-content .price{
+    width: 10%;
+    background-color: red;
+}
+.adminBikes-content .adminbtn{
+    width: 15%;
+    background-color: blue;
+}
+
+.adminBikes-content .image{
+    width: 20%;
+    background-color: blue;
+}
