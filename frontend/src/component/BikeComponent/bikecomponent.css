@@ -1,18 +1,22 @@
-.all-bike-container{
+/* .all-bike-container{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap:20px;   
+    gap:30px;   
+    font-family: "Poppins", sans-serif;
+    margin: 150px 0px;
 }
 
 
 .single-product-componetn{
     
-    box-shadow: 0px 6px 10px rgb(22, 22, 22);
-    width: 300px;
-    height: 420px;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
+    align-items: center;
+    justify-content: center;   
+    
+    width: 400px;
+    height: 350px;
+    border-radius: 3%;
+    border:1px solid #8b8b8b;
    
 }
 
@@ -20,24 +24,16 @@
     width: 300px;
     height: 200px;
     
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
-    
 }
 
 
 .single-product-componetn .image img{
     width: 100%;
     height: 100%;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
 }
 
 .single-product-componetn .single-product-info{
-    padding-top: 20px;
-    padding-left: 10px;
+    
     font-size: 16px;
     font-weight: 600;
 }
@@ -48,14 +44,91 @@
 
 
 .single-product-componetn button{
-    margin: 10px;
-    width: 90px;
-    height: 30px;
-    background-color: orangered;
-    color: white;
+    height: 55px;
+    width: 80%;
+    color: #fff;
+    font-size: 1rem;
     border: none;
+    margin-top: 30px;
     cursor: pointer;
-    border-radius: 10px;
-}
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: #018882;
+} */
 
 
+
+.all-bike-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;   
+    font-family: "Poppins", sans-serif;
+    margin: 150px 0;
+  }
+  
+  .single-product-componetn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 350px;
+    border-radius: 3%;
+    border: 1px solid #8b8b8b;
+    padding: 20px; /* Adds padding inside the component */
+    transition: box-shadow 0.3s ease; /* Transition for hover effect */
+  }
+  
+  .single-product-componetn:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+  }
+  
+  .single-product-componetn .image {
+    width: 100%; /* Make the image container take the full width */
+    height: 200px;
+  }
+  
+  .single-product-componetn .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image scales properly */
+  }
+  
+  .single-product-componetn .single-product-info {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .single-product-componetn .single-product-info p {
+    margin: 5px 0; /* Space between the info lines */
+  }
+  
+  .single-product-componetn .single-product-info p span {
+    color: rgb(119, 117, 117);
+  }
+  
+  .single-product-componetn .single-product-info .price {
+    font-size: 18px;
+    color: #018882;
+  }
+  
+  .single-product-componetn button {
+    height: 50px;
+    width: 80%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: #018882;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .single-product-componetn button:hover {
+    background-color: #016f6a; /* Darker color on hover */
+  }
+  

@@ -17,8 +17,8 @@ const Home = () => {
   },[])
   return (
     <UserContainer>
-    <div> home page
-     <AllBikeLIst bikes = {bikes}/>
+    <div>
+    <AllBikeLIst bikes = {bikes}/>
     </div>
     </UserContainer>
   )

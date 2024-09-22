@@ -11,15 +11,15 @@ const SingleComponent = ({bike}) => {
         </div>
 
         <div className="single-product-info">
-            <p><span>name: </span>{bike?.name}</p>
-            <p><span>serialNumber: </span>{bike?.serialNumber}</p>
+            <p><span></span>{bike?.name} | <span>status: </span>{bike?.status}</p>
+            {/* <p><span>serialNumber: </span>{bike?.serialNumber}</p>
             <p><span>description: </span>{bike?.description}</p>
-            <p><span>type: </span>{bike?.bikeType}</p>
-            <p><span>price: </span>{bike?.price}</p>
-            <p><span>status: </span>{bike?.status}</p>
+            <p><span>type: </span>{bike?.bikeType}</p> */}
+            <p className='price'><span>price: </span>{bike?.price}</p>
+            
         </div>
         
-            <button>rent bike</button>
+            <button type="submit" >rent bike</button>
     
 
         
