@@ -28,16 +28,20 @@ const Login = () => {
     },[])
   return (
     <UserContainer>
-    <div>
+
+<section className='main'>
+    <div className='container'>
         <h1>login</h1>
 
-        <form onSubmit={handleLogin}>
-            <label htmlFor="login">email: </label>
+        <form className="form" onSubmit={handleLogin}>
+        <div className='input-box'>
+            <label htmlFor="User Login">email: </label>
             <input type="text" name="login" id="login" value={email}  onChange={(e)=>setemail(e.target.value)}/>
-
+        </div>
+        <div className='input-box'>
             <label htmlFor="password">password</label>
             <input type="password" name="password" id="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-
+        </div>
             <button type="submit">login</button>
         </form>
         <div className="error-loading">
@@ -46,6 +50,7 @@ const Login = () => {
         </div>
       
     </div>
+    </section>
     </UserContainer>
   )
 }

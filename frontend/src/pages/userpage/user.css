@@ -5,39 +5,43 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    
     
 }
-body{
+
+/* body{
     background: #f1f1f1 ;
     align-items: center;
     justify-content: center;
-}
+} */
 
 
 .main{
     display: flex;
     align-items: center;
     justify-content: center;    
-    padding: 20px;
-    
-    max-width: 700px;
+    padding: 60px;
+    font-family: "Poppins", sans-serif;
+    width: 90%;
+    margin: auto;
 }
 
 
 .container{
     position: relative;
-    
+    border:1px solid #cccccc;
+    border-radius: 6px;
     max-width: 100%;
     background: #fff;
-    padding: 25px;
+    padding: 45px;
     border-radius: 8px;
+    box-shadow: 5px 6px 10px 10px #ddd8d8 ;
 }
 
 .container h1{
     font-size: 1.5rem;
-    color:#333;
-    font-weight: 500;
+    font-weight: 800;
+    color:#018882;
     text-align: center;
 }
 
@@ -48,7 +52,7 @@ body{
 
 .form .input-box{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 
 }
 
@@ -59,13 +63,40 @@ body{
 
 .form .input-box input{
     position: relative;
-    height: 50ox;
+    height: 50px;
     width: 100%;
     outline: none;
     font-size:1rem;
     color: #707070;
-    margin-top: 8px;
-    border:1px solid #ddd;
+    margin-top: 3px;
+    border:1px solid #8b8b8b;
     border-radius: 6px;
     padding: 0 15px;
 }
+
+
+.form button{
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: #018882;
+}
+
+
+.error-loading{
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+}
+
+
+
+/* Login Css */
+
+
