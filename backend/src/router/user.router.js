@@ -14,7 +14,7 @@ router.route('/login').post(loginUser)
 router.route('/user').get(authjwt, getCurrentUser)
 router.route('/logout').post(authjwt,logoutUser)
 router.route('/refresh').post(authjwt,refreshAccessToken)
-router.route('/getalluser').get(adminjwt, getAllUser)
+router.route('/getalluser').get(getAllUser)
 router.route('/deleteuser').delete(adminjwt, deleteUser)
 
 

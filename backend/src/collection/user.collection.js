@@ -299,10 +299,10 @@ const refreshAccessToken = AsyncHandler(async(req, res)=>{
 })
 
 const getAllUser = AsyncHandler(async(req, res)=>{
-    const admin = req.user
-    if(!admin){
-        throw new ApiError(400, "admin must be logged in")
-    }
+    // const admin = req.user
+    // if(!admin){
+    //     throw new ApiError(400, "admin must be logged in")
+    // }
 
     const users = await User.find()
 

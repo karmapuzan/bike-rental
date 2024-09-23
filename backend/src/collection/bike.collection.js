@@ -163,19 +163,29 @@ const deleteBike = AsyncHandler(async (req, res) => {
     const { id } = req.params;
 
     // Find the bike by ID
-    const bike = await Bike.findById(id);
-    if (!bike) {
-        throw new ApiError(404, "Bike not found");
-    }
+     await Bike.findByIdAndDelete(id)
+    
 
-    // Delete the bike
-    await bike.remove();
-
-    res.status(200).json(new ApiResponse(200, null, "Bike deleted successfully"));
+    res.status(200).json(new ApiResponse(200, {}, "Bike deleted successfully"));
 });
 
 
+const getSingleItem = AsyncHandler(async(req, res)=>{
+    const {id} = req.params
+    if(!id){
+        throw new ApiError(400, "provided id is  not a vlaid object is")
+    }
+    
+    const fooditem = await Bike.findById(id).populate('bikeType')
+
+
+    return res.status(200).json(new ApiResponse(200, fooditem, "getting single data"))
 
 
 
-export {addBike, getBikes, updateBike, deleteBike}
+})
+
+
+
+
+export {addBike, getBikes, updateBike, deleteBike, getSingleItem}

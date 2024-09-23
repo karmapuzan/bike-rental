@@ -63,7 +63,7 @@ export const AdminBikeDelete = (id) => async(dispatch)=>{
 
     try {
         console.log("typing delteing", id)
-        await api.delete(`/api/v1/bike/deletebike/${id}`)
+        await axios.delete(`/api/v1/bike/deletebike/${id}`)
         dispatch({type:BIKE_DELETE_SUCCESS, payload:id})
         
     } catch (error) {

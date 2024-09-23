@@ -9,6 +9,7 @@ import AdminLogin from './pages/adminpage/AdminLogin'
 import AddBike from './pages/adminpage/AddBike'
 import EditBike from './pages/adminpage/EditBike'
 import DeleteBike from './pages/adminpage/DeleteBike'
+import Users from './pages/adminpage/Users'
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Route path="/adminlogin" element= {<AdminLogin/>}/>
         <Route path="/admin/bikes" element= {<AdminBikes/>}/>
         <Route path="/admin/add" element= {<AddBike/>}/>
+        <Route path="/admin/user" element= {<Users/>}/>
         <Route path="/admin/edit/:id" element= {<EditBike/>}/>
         <Route path="/admin/delete/:id" element= {<DeleteBike/>}/>
       </Routes>

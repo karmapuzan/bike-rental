@@ -1,4 +1,4 @@
-import { GET_BIKE_FAIL,GET_BIKE_REQUEST,GET_BIKE_SUCCESS } from "../constants/BikeConstants";
+import { GET_BIKE_FAIL,GET_BIKE_REQUEST,GET_BIKE_SUCCESS, BIKE_DETAIL_FAIL, BIKE_DETAIL_REQUEST, BIKE_DETAIL_SUCCESS } from "../constants/BikeConstants";
 
 
 export const getBikeReducer = (state={loading:false}, action)=>{
@@ -12,4 +12,19 @@ export const getBikeReducer = (state={loading:false}, action)=>{
         default:
             return state
     }
+}
+
+export const BikeDetailReducer = (state = {loading:true}, action)=>{
+
+    switch(action.type){
+        case BIKE_DETAIL_REQUEST:
+            return {loading:true}
+        case BIKE_DETAIL_SUCCESS:
+            return {loading:false, singlebike:action.payload}
+        case BIKE_DETAIL_FAIL:
+            return {loading:false, error:action.payload}
+        default:
+            return state
+    }
+
 }

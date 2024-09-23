@@ -22,5 +22,23 @@ export const GetBike = ()=> async(dispatch)=>{
 }
 
 
+export const Bikedetail = (id)=> async(dispatch)=>{
+    dispatch({type:BIKE_DETAIL_REQUEST, payload:id})
+
+    try {
+        const {data} = await axios.get(`/api/v1/bike/detail/${id}`)
+
+       
+
+        dispatch({type:BIKE_DETAIL_SUCCESS, payload:data.data})
+        
+    } catch (error) {
+        dispatch({type:BIKE_DETAIL_FAIL, payload:error?.response && error?.response.data.message ? error.response.data.message : error.message})
+
+    }
+
+}
+
+
 
 
