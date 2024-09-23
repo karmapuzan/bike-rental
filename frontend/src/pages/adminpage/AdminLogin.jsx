@@ -24,7 +24,7 @@ const AdminLogin = () => {
     dispatch(adminlogin({ email, password }));
   };
   return (
-    <AdminContainer>
+    
     <div>
         <h1>login</h1>
 
@@ -57,7 +57,7 @@ const AdminLogin = () => {
           </form>
       
     </div>
-    </AdminContainer>
+    
   )
 }
 
