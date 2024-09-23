@@ -65,7 +65,7 @@ export const AddBikeReducer = (state= {loading:false}, action)=>{
         case ADD_BIKES_REQUEST:
             return {loading:true}
         case ADD_BIKES_SUCCESS:
-            return {loading:false, fooddata: action.payload}
+            return {loading:false, bikedata: action.payload}
         case ADD_BIKES_FAIL:
             return {loading:false, error:action.payload}
         default:

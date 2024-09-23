@@ -7,7 +7,7 @@ import { adminjwt } from "../middleware/authadmin.middleware.js";
 const router = express.Router()
 
 // router.post('/addbike', upload.single('bikeImage'),addBike);
-router.route('/addbike').post(adminjwt,upload.single('image'), addBike);
+router.route('/addbike').post(upload.single('image'), addBike);
 
 router.route('/getbike').get(getBikes)
 router.route('/deletebike/:id').delete(adminjwt, deleteBike)

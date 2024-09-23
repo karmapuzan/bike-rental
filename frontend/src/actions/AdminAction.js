@@ -76,12 +76,12 @@ export const AdminBikeDelete = (id) => async(dispatch)=>{
 }
 
 
-export const adminAddBikes = (name, serialNumber, description, bikeType, price)=>async(dispatch)=>{
+export const adminAddBikes = (name, serialNumber, description, bikeType, price,image)=>async(dispatch)=>{
     dispatch({type:ADD_BIKES_REQUEST})
 
     try {
         console.log("trying", image)
-        const {data} = await api.post('/api/v1/bike/addbike', {name, serialNumber, description, bikeType, price},
+        const {data} = await axios.post('/api/v1/bike/addbike', {name, serialNumber, description, bikeType, price,image},
            { headers: {
                 'Content-Type': 'multipart/form-data',
             },}
@@ -91,8 +91,8 @@ export const adminAddBikes = (name, serialNumber, description, bikeType, price)=
         console.log("fooditem data", data.data)
         
     } catch (error) {
-        console.log("error", error.response.data.message)
-        dispatch({type:ADD_BIKES_FAIL, payload:error.response && error.response.data.message?error.response.data.message: error.message })
+        console.log("error", error.response)
+        dispatch({type:ADD_BIKES_FAIL, payload:error.response && error.response?.data.message?error.response?.data.message: error.message })
 
         
     }
